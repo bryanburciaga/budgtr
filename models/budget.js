@@ -1,5 +1,5 @@
 
-data = [
+grid = [
     {
       date: "April 1",
       name: "Income",
@@ -72,4 +72,4 @@ data = [
     },
   ];
   
-  module.exports = data;
+  module.exports = grid;

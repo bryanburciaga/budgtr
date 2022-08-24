@@ -5,9 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
+    <title>Budgtr</title>
 </head>
 <body>
-    
+    <h1>Budgtr</h1>
+    <ol>
+        <% grid.forEach((f) => { %>
+            <li>
+                <a href="/budgets/<%= f.id %>">
+                <%= f.name %> 
+            </a>
+            </li>
+       <% }); %>
+    </ol>
+    <a href="/budget/new">Add a new budget</a>
 </body>
 </html>
+
+
+app.use(express.static('public'));
