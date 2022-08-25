@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="/skeleton.css" />
     <title>Budgtr</title>
 </head>
 <body>
-    <h1>Budgtr</h1>
-    <ol>
-        <% grid.forEach((f) => { %>
-            <li>
-                <a href="/budgets/<%= f.id %>">
-                <%= f.name %> 
-            </a>
-            </li>
-       <% }); %>
-    </ol>
-    <a href="/budget/new">Add a new budget</a>
+    <div class="container">
+    <h1>Budgtr ALL</h1>
+    <table>
+      <% for(let i=0; i < budgetTable.length; i++) { %>
+          <tr>
+              <td> <%= budgetTable[i].date %> </td>
+              <td> <a href ="/budget/<%= i %>" ><%= budgetTable[i].name %> </a> </td>
+              <td> <%= budgetTable[i].amount %> </td>
+          </tr>
+      <% } %>
+  </table>
+</div>
+
+ 
 </body>
 </html>
 
 
-app.use(express.static('public'));

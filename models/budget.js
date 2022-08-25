@@ -1,5 +1,5 @@
 
-grid = [
+budget = [
     {
       date: "April 1",
       name: "Income",
@@ -72,4 +72,4 @@ grid = [
     },
   ];
   
-  module.exports = grid;
+  module.exports = budget;
