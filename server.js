@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const port = process.env.PORT;
 const budget = require('./models/budget');
-console.log('this is grid inside of budgtr.js', budget);
+// console.log('this is grid inside of budgtr.js', budget);
 const app = express();
 app.use(express.static('public'));
 
@@ -12,6 +12,16 @@ app.listen(port, () => {
 
 app.get('/budget', (req, res) => {
     res.render('index.ejs', {budgetTable: budget});
+});
+
+app.get('/budget/new', (req, res) => {
+    res.render('new.ejs');
+});
+
+app.post('/budget', (req, res) => {
+    console.log('req.body: ', req.body);
+    budget.push(req.body);
+    res.redirect('/budget');
 });
 
 app.get('/budget/:id', (req,res) => {
